@@ -27,7 +27,7 @@
         .card {
             background: #ffffffdd;
             margin: 28px auto;
-            padding: 24px;
+            padding: 26px;
             width: 85%;
             max-width: 560px;
             border-radius: 18px;
@@ -35,26 +35,29 @@
             animation: slideUp 1.2s ease;
         }
 
-        button {
-            background: linear-gradient(to right, #ffb6c1, #cdb4db);
-            color: #4a3b5c;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s ease;
+        .click-text {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            opacity: 0.8;
         }
 
-        button:hover {
-            transform: scale(1.05);
+        .image-button {
+            width: 120px;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+
+        /* Triggered ONLY on click */
+        .bounce {
+            animation: bounceJiggle 0.9s ease;
         }
 
         #msg {
             display: none;
-            margin-top: 18px;
+            margin-top: 22px;
             font-weight: 500;
-            animation: fadeIn 1s ease;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease;
         }
 
         .confetti {
@@ -79,6 +82,16 @@
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+
+        /* BOUNCY + JIGGLY CLICK ANIMATION */
+        @keyframes bounceJiggle {
+            0%   { transform: scale(1) rotate(0deg); }
+            20%  { transform: scale(1.15) rotate(-4deg); }
+            40%  { transform: scale(0.9) rotate(4deg); }
+            60%  { transform: scale(1.1) rotate(-3deg); }
+            80%  { transform: scale(1.03) rotate(2deg); }
+            100% { transform: scale(1) rotate(0deg); }
         }
 
         @keyframes fall {
@@ -119,21 +132,42 @@
 
     <!-- Card 2 -->
     <div class="card">
-        <button onclick="celebrate()">Tap for Birthday Cheer 🎁</button>
-        <p id="msg">
-            🎂 Have a lovely year ahead, Shinchan!  
-            Enjoy your special day 🌸
-        </p>
+        <p class="click-text">Click on the button</p>
+
+        <img 
+            src="C:\Users\Admin\OneDrive\Desktop\New folder\9k.png"
+            alt="Birthday Button"
+            class="image-button"
+            id="btn"
+            onclick="celebrate()"
+        >
+
+        <div id="msg">
+            Happy Birthday, SHINCHAN! 🌙🤍<br><br>
+            You’re my calm in chaos, my constant in change🌷<br>
+            Thank you for existing and making life feel softer.<br><br>
+            I’m so grateful for you — always.<br>
+            May this year treat you gently ✨🕊️🎂
+        </div>
     </div>
 
     <footer>
-        made with pastel colors & good wishes 🇮🇳
+        made with pastel colors & gentle wishes 🇮🇳
     </footer>
 
     <script>
         function celebrate() {
+            const btn = document.getElementById("btn");
+
+            // Trigger bounce animation
+            btn.classList.remove("bounce");
+            void btn.offsetWidth; // reset animation
+            btn.classList.add("bounce");
+
+            // Show message
             document.getElementById("msg").style.display = "block";
 
+            // Confetti
             for (let i = 0; i < 40; i++) {
                 const confetti = document.createElement("div");
                 confetti.className = "confetti";
@@ -142,9 +176,7 @@
                 confetti.style.animationDuration = (2 + Math.random() * 2) + "s";
                 document.body.appendChild(confetti);
 
-                setTimeout(() => {
-                    confetti.remove();
-                }, 4000);
+                setTimeout(() => confetti.remove(), 4000);
             }
         }
     </script>
