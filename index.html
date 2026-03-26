@@ -2,30 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Aryaa!! 🎂</title>
 
     <style>
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #f3d6dd, #d8b4c4, #a86c7a);
+            background: linear-gradient(135deg, #5c2333, #7a3147, #8f4a5e);
             text-align: center;
             color: #4a3b5c;
             overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
         }
 
         h1 {
             margin-top: 35px;
             font-size: 2.7rem;
             animation: fadeIn 1.5s ease;
+            color: #f3dfc1;
+            text-shadow: 
+                0 0 8px rgba(243, 223, 193, 0.35),
+                0 0 18px rgba(243, 223, 193, 0.2);
+            position: relative;
+            z-index: 2;
         }
 
         p {
             font-size: 1.05rem;
         }
 
+        .subtitle {
+            color: #f5dfc4;
+            font-size: 1.05rem;
+            opacity: 0.95;
+            margin-top: -5px;
+            margin-bottom: 12px;
+            letter-spacing: 0.4px;
+            position: relative;
+            z-index: 2;
+        }
+
         .card {
-            background: #ffffffdd;
+            background: #d8b89a;
+            color: #4f3729;
             margin: 28px auto;
             padding: 26px;
             width: 85%;
@@ -33,6 +54,8 @@
             border-radius: 18px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
             animation: slideUp 1.2s ease;
+            position: relative;
+            z-index: 2;
         }
 
         .click-text {
@@ -47,7 +70,6 @@
             transition: transform 0.15s ease;
         }
 
-        /* Triggered ONLY on click */
         .bounce {
             animation: bounceJiggle 0.9s ease;
         }
@@ -66,6 +88,63 @@
             font-size: 1.2rem;
             animation: fall 3s linear forwards;
             pointer-events: none;
+            z-index: 999;
+        }
+
+        /* SCRAPBOOK STICKERS */
+        .sticker {
+            position: absolute;
+            color: #f3dfc1;
+            opacity: 0.72;
+            z-index: 1;
+            user-select: none;
+            pointer-events: none;
+            animation: floaty 4s ease-in-out infinite;
+            text-shadow: 0 0 10px rgba(243, 223, 193, 0.15);
+        }
+
+        /* RANDOM POSITIONS */
+        .s1  { top: 2%; left: 2%; font-size: 2rem; transform: rotate(-8deg); }
+        .s2  { top: 5%; left: 12%; font-size: 1.4rem; transform: rotate(12deg); }
+        .s3  { top: 3%; right: 3%; font-size: 1.8rem; transform: rotate(-10deg); }
+        .s4  { top: 8%; right: 12%; font-size: 1.5rem; transform: rotate(8deg); }
+        .s5  { top: 14%; left: 5%; font-size: 1.6rem; transform: rotate(-5deg); }
+        .s6  { top: 18%; right: 5%; font-size: 1.8rem; transform: rotate(10deg); }
+        .s7  { top: 23%; left: 2%; font-size: 1.4rem; transform: rotate(-8deg); }
+        .s8  { top: 28%; right: 2%; font-size: 1.7rem; transform: rotate(7deg); }
+        .s9  { top: 33%; left: 7%; font-size: 1.3rem; transform: rotate(-12deg); }
+        .s10 { top: 36%; right: 8%; font-size: 1.9rem; transform: rotate(9deg); }
+        .s11 { top: 42%; left: 3%; font-size: 1.5rem; transform: rotate(-7deg); }
+        .s12 { top: 47%; right: 4%; font-size: 1.7rem; transform: rotate(11deg); }
+        .s13 { top: 51%; left: 11%; font-size: 1.4rem; transform: rotate(-10deg); }
+        .s14 { top: 57%; right: 11%; font-size: 1.8rem; transform: rotate(6deg); }
+        .s15 { top: 62%; left: 4%; font-size: 1.5rem; transform: rotate(-6deg); }
+        .s16 { top: 66%; right: 5%; font-size: 1.6rem; transform: rotate(10deg); }
+        .s17 { top: 72%; left: 8%; font-size: 1.3rem; transform: rotate(-8deg); }
+        .s18 { top: 76%; right: 7%; font-size: 1.7rem; transform: rotate(9deg); }
+        .s19 { top: 82%; left: 3%; font-size: 1.5rem; transform: rotate(-10deg); }
+        .s20 { top: 87%; right: 3%; font-size: 1.9rem; transform: rotate(12deg); }
+
+        .s21 { top: 6%; left: 24%; font-size: 1.3rem; transform: rotate(-7deg); }
+        .s22 { top: 16%; right: 22%; font-size: 1.4rem; transform: rotate(8deg); }
+        .s23 { top: 21%; left: 22%; font-size: 1.2rem; transform: rotate(-11deg); }
+        .s24 { top: 31%; right: 24%; font-size: 1.5rem; transform: rotate(9deg); }
+        .s25 { top: 40%; left: 20%; font-size: 1.4rem; transform: rotate(-6deg); }
+        .s26 { top: 46%; right: 20%; font-size: 1.3rem; transform: rotate(7deg); }
+        .s27 { top: 54%; left: 23%; font-size: 1.2rem; transform: rotate(-10deg); }
+        .s28 { top: 60%; right: 22%; font-size: 1.4rem; transform: rotate(10deg); }
+        .s29 { top: 68%; left: 19%; font-size: 1.3rem; transform: rotate(-8deg); }
+        .s30 { top: 74%; right: 21%; font-size: 1.5rem; transform: rotate(9deg); }
+        .s31 { top: 80%; left: 24%; font-size: 1.2rem; transform: rotate(-7deg); }
+        .s32 { top: 86%; right: 24%; font-size: 1.4rem; transform: rotate(8deg); }
+        .s33 { top: 10%; left: 33%; font-size: 1.2rem; transform: rotate(-9deg); }
+        .s34 { top: 58%; right: 33%; font-size: 1.3rem; transform: rotate(10deg); }
+        .s35 { top: 78%; left: 34%; font-size: 1.2rem; transform: rotate(-6deg); }
+        .s36 { top: 90%; right: 34%; font-size: 1.4rem; transform: rotate(9deg); }
+
+        @keyframes floaty {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(3deg); }
         }
 
         @keyframes fadeIn {
@@ -84,7 +163,6 @@
             }
         }
 
-        /* BOUNCY + JIGGLY CLICK ANIMATION */
         @keyframes bounceJiggle {
             0%   { transform: scale(1) rotate(0deg); }
             20%  { transform: scale(1.15) rotate(-4deg); }
@@ -108,15 +186,57 @@
         footer {
             margin: 35px 10px;
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #f5dfc4;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 0.4px;
         }
     </style>
 </head>
 
 <body>
 
+    <!-- RANDOM SCRAPBOOK STICKERS -->
+    <div class="sticker s1">✿</div>
+    <div class="sticker s2">⋆</div>
+    <div class="sticker s3">୨ৎ</div>
+    <div class="sticker s4">♡</div>
+    <div class="sticker s5">✦</div>
+    <div class="sticker s6">❀</div>
+    <div class="sticker s7">༘</div>
+    <div class="sticker s8">♡</div>
+    <div class="sticker s9">✦</div>
+    <div class="sticker s10">୨ৎ</div>
+    <div class="sticker s11">✿</div>
+    <div class="sticker s12">⋆</div>
+    <div class="sticker s13">♡</div>
+    <div class="sticker s14">❀</div>
+    <div class="sticker s15">༘</div>
+    <div class="sticker s16">✦</div>
+    <div class="sticker s17">୨ৎ</div>
+    <div class="sticker s18">✿</div>
+    <div class="sticker s19">♡</div>
+    <div class="sticker s20">⋆</div>
+    <div class="sticker s21">✦</div>
+    <div class="sticker s22">❀</div>
+    <div class="sticker s23">♡</div>
+    <div class="sticker s24">༘</div>
+    <div class="sticker s25">✿</div>
+    <div class="sticker s26">୨ৎ</div>
+    <div class="sticker s27">⋆</div>
+    <div class="sticker s28">♡</div>
+    <div class="sticker s29">✦</div>
+    <div class="sticker s30">❀</div>
+    <div class="sticker s31">༘</div>
+    <div class="sticker s32">✿</div>
+    <div class="sticker s33">୨ৎ</div>
+    <div class="sticker s34">⋆</div>
+    <div class="sticker s35">♡</div>
+    <div class="sticker s36">✦</div>
+
     <h1>🎉 Happy Birthday Ariii!! 🎉</h1>
-    <p>soft smiles, good vibes & cake 🎂</p>
+    <p class="subtitle">soft smiles, good vibes & cake 🎂</p>
 
     <!-- Card 1 -->
     <div class="card">
@@ -134,7 +254,6 @@
             Again Sorry..
             Miss _xthx_moon_! hehe
             ENJOYYY!!!!!!
-            
         </p>
     </div>
 
@@ -168,15 +287,12 @@
         function celebrate() {
             const btn = document.getElementById("btn");
 
-            // Trigger bounce animation
             btn.classList.remove("bounce");
-            void btn.offsetWidth; // reset animation
+            void btn.offsetWidth;
             btn.classList.add("bounce");
 
-            // Show message
             document.getElementById("msg").style.display = "block";
 
-            // Confetti
             for (let i = 0; i < 40; i++) {
                 const confetti = document.createElement("div");
                 confetti.className = "confetti";
